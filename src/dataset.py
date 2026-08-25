@@ -38,8 +38,8 @@ def get_dataloaders(df,image_dir,word2idx,batch_size=32):
     val_ds=Flickr8kDataset(val_df,image_dir,word2idx,image_transform)
     test_ds=Flickr8kDataset(test_df,image_dir,word2idx,image_transform)
     
-    train_laoder=DataLoader(train_ds,batch_size=batch_size,shuffle=True)
+    train_loader=DataLoader(train_ds,batch_size=batch_size,shuffle=True)
     val_loader=DataLoader(val_ds,batch_size=batch_size,shuffle=False)
     test_loader=DataLoader(test_ds,batch_size=batch_size,shuffle=False)
     
-    return train_laoder,val_loader,test_loader
+    return train_loader,val_loader,test_loader
