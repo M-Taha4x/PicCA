@@ -26,7 +26,7 @@ class Flickr8kDataset(Dataset):
         caption_tensor=torch.tensor(caption_seq,dtype=torch.long)
         return image,caption_tensor
 def get_dataloaders(df,image_dir,word2idx,batch_size=32):
-    unique_images=df['images'].unique()
+    unique_images=df['image'].unique()
     train_img,temp_img=train_test_split(unique_images,test_size=0.2,random_state=42)
     val_imgs,test_imgs=train_test_split(temp_img,test_size=0.5,random_state=42)
     
